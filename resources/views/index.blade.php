@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container text-center">
-        <h1>Welcome to PostBlog Project</h1>
+        <h1>Welcome to PostBlog Website</h1>
         <p>Get start now</p>
         <div class="button-group">
             <a href="#" class="btn btn-primary">Sign in</a>

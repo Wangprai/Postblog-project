@@ -33,7 +33,7 @@
     </div>
     
     <div class="content text-center">
-        <p>Empty Post</p>
+        @content
     </div>
         
     <footer class="bg-dark text-white mt-auto">
