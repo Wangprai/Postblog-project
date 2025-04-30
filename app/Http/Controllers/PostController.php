@@ -52,7 +52,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
-        return view('homePage' ,compact('post'));
+        return view('showPost' ,compact('post'));
     }
 
     /**
@@ -60,7 +60,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('editPost',compact('post'));
     }
 
     /**
@@ -68,7 +68,20 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'content'=>'required'
+        ]);
+        $imagePath = $request->file('image')->store('posts','public');
+
+        $post->update([
+            'title'=>$request->title,
+            'image'=>$imagePath,
+            'content'=>$request->content
+        ]);
+
+        return redirect()->route('homePage')->with('success','Post updated');
     }
 
     /**
@@ -76,6 +89,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('homePage')->with('success', 'Post deleted');
     }
 }

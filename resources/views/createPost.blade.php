@@ -21,11 +21,12 @@
                     </div>
                     <div class="mb-3 mx-3" style="width: 80%;">
                         <label for="content">Content :</label>
-                        <input type="text" name="content" class="form-control" required>
+                        <textarea type="text" name="content" class="form-control" required></textarea>
                     </div>
-                    <button class="btn btn-primary mb-5" type="submit">Create Post</button>
-
-
+                    <div class="button-group mb-3">
+                        <a href="{{ route('homePage') }}" class="btn btn-secondary">Back</a>
+                        <button class="btn btn-primary" type="submit">Create Post</button>
+                    </div>
                 </form>
             </div>
 
