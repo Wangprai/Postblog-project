@@ -13,8 +13,8 @@
         <h1>Welcome to PostBlog Website</h1>
         <p>Get start now</p>
         <div class="button-group">
-            <a href="#" class="btn btn-primary">Sign in</a>
-            <a href="#" class="btn btn-secondary">Log in</a>
+            <a href="{{ route('homePage') }}" class="btn btn-primary">Sign in</a>
+            <a href="{{ route('homePage') }}" class="btn btn-secondary">Log in</a>
         </div>
     </div>
 </body>

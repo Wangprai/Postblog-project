@@ -10,9 +10,10 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function home()
     {
-        return view('showPost');
+        $posts = Post::all();
+        return view('homePage' ,compact('posts'));
     }
 
     /**
@@ -20,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('createPost');
     }
 
     /**
@@ -29,6 +30,20 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'title'=>'required',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'content'=>'required'
+        ]);
+        $imagePath = $request->file('image')->store('posts','public');
+
+        Post::create([
+            'title'=>$request->title,
+            'image'=>$imagePath,
+            'content'=>$request->content
+        ]);
+
+        return redirect()->route('homePage')->with('success','Post created');
     }
 
     /**
@@ -37,6 +52,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        return view('homePage' ,compact('post'));
     }
 
     /**

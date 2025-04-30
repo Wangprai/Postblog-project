@@ -22,18 +22,18 @@
             </a>
 
             <ul class="nav nav-masthead">
-                <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Liked Post</a></li>
+                <li class="nav-item"><a href="{{ route('homePage') }}" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Liked Post</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">You Post</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#" class="btn btn-primary">Sign Out</a></li>
+                <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{ route('index') }}" class="btn btn-primary">Sign Out</a></li>
             </ul>
         </header>
     </div>
     
-    <div class="content text-center">
-        @content
+    <div class="content">
+        @yield('content')
     </div>
         
     <footer class="bg-dark text-white mt-auto">

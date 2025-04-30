@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User_data;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class UserDataController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class UserDataController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User_data $user_data)
+    public function show(Comment $comment)
     {
         //
     }
@@ -42,7 +42,7 @@ class UserDataController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User_data $user_data)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -50,7 +50,7 @@ class UserDataController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User_data $user_data)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -58,7 +58,7 @@ class UserDataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User_data $user_data)
+    public function destroy(Comment $comment)
     {
         //
     }

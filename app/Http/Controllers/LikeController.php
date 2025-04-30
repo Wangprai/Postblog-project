@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PostDetail;
+use App\Models\Like;
 use Illuminate\Http\Request;
 
-class PostDetailController extends Controller
+class LikeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class PostDetailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(PostDetail $postDetail)
+    public function show(Like $like)
     {
         //
     }
@@ -42,7 +42,7 @@ class PostDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(PostDetail $postDetail)
+    public function edit(Like $like)
     {
         //
     }
@@ -50,7 +50,7 @@ class PostDetailController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, PostDetail $postDetail)
+    public function update(Request $request, Like $like)
     {
         //
     }
@@ -58,7 +58,7 @@ class PostDetailController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PostDetail $postDetail)
+    public function destroy(Like $like)
     {
         //
     }
