@@ -28,7 +28,7 @@
                         <textarea name="content" class="form-control" required>{{ $post->content }}</textarea>
                     </div>
                     <div class="button-group text-center mb-3">
-                        <a href="{{ route('homePage') }}" class="btn btn-secondary">Back</a>
+                        <a href="{{ route('home') }}" class="btn btn-secondary">Back</a>
                         <button type="submit" class="btn btn-primary">Edit Post</button>
                     </div>
                 </form>

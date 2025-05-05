@@ -11,40 +11,63 @@
 </head>
 
 <body>
-    
+
     <div class="container">
-        <div class="card">
-            <h1 class="text-center">Register</h1>
-            <div class="mb-3">
-                <label for="firstname" name="firstname">Firstname: </label>
-                <input type="text" class="form-control" required>
-
-                <label for="surname" name="surname">Surname: </label>
-                <input type="text" class="form-control" required>
-
-                <label for="nickname" name="nickname">Nickname: </label>
-                <input type="text" class="form-control" required>
-
-                <label for="age" name="age">Age: </label>
-                <input type="" class="form-control" required>
-
-                <label for="gender" name="gender">Gender: </label>
-
-                
-                <label for="password" name="password">Password: </label>
-                <input type="password" class="form-control" required>
-
-                <label for="confirm-password" name="confirm-password">Confirm Password: </label>
-                <input type="password" class="form-control" required>
-            </div>
-
-            <form action="#" method="">
+        <div class="card p-4">
+            <h1 class="text-center mb-3">Register</h1>
+            <form action="{{ route('register') }}" method="POST">
                 @csrf
-               <button type="submit" class="btn btn-primary">Confirm</button> 
+                <div class="mb-3">
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" name="username" id="username" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="age">Age:</label>
+                    <input type="number" class="form-control" name="age" id="age" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="gender">Gender:</label>
+                    <select class="form-control" name="gender" id="gender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password" id="password" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password_confirmation">Confirm Password:</label>
+                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"
+                        required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Confirm</button>
+                <a href="{{ route('index') }}" class="btn btn-secondary ms-2">Back</a>
             </form>
-            
-            <a href="#" class="btn btn-secondary mb-3">Back</a>
         </div>
+
     </div>
 </body>
 
