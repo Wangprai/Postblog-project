@@ -16,6 +16,14 @@ class PostController extends Controller
         return view('homePage' ,compact('posts'));
     }
 
+    public function ownerPost()
+    {
+        $user = auth()->user();
+        $myPosts = $user->posts;
+        // dd($user);
+        return view('myPost', compact('myPosts'));
+    } 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -38,12 +46,13 @@ class PostController extends Controller
         $imagePath = $request->file('image')->store('posts','public');
 
         Post::create([
+            'user_id'=>auth()->id(),
             'title'=>$request->title,
             'image'=>$imagePath,
             'content'=>$request->content
         ]);
 
-        return redirect()->route('homePage')->with('success','Post created');
+        return redirect()->route('home')->with('success','Post created');
     }
 
     /**
@@ -81,7 +90,7 @@ class PostController extends Controller
             'content'=>$request->content
         ]);
 
-        return redirect()->route('homePage')->with('success','Post updated');
+        return redirect()->route('home')->with('success','Post updated');
     }
 
     /**
@@ -90,6 +99,6 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->route('homePage')->with('success', 'Post deleted');
+        return redirect()->route('home')->with('success', 'Post deleted');
     }
 }
