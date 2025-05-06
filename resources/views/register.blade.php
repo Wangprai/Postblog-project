@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="card p-4">
             <h1 class="text-center mb-3">Register</h1>

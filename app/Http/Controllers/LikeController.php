@@ -31,5 +31,11 @@ class LikeController extends Controller
 
         return back();
     }
-    
+
+    public function showLikePost()
+    {
+        $likedPosts = auth()->user()->likedPosts; 
+        return view('likedPost', compact('likedPosts'));
+    }
+
 }

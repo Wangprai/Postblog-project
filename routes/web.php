@@ -37,4 +37,5 @@ Route::delete('/delete/{post}', [PostController::class, 'destroy'])->name('delet
 
 Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');
 Route::post('/posts/{post}/unlike', [LikeController::class, 'unlike'])->name('posts.unlike');
+Route::get('/liked-posts', [LikeController::class, 'showLikePost'])->name('likedPosts');
 
