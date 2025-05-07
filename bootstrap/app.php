@@ -12,6 +12,11 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        $middleware->alias([
+            'middleware' => \App\Http\Middleware\Middleware::class,
+            'post.owner' => \App\Http\Middleware\EnsurePostOwner::class,
+        ]);
+        
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
